@@ -4,7 +4,7 @@ import RightArrow from "../icons/RightArrow"
 
 export default function Hero() {
   return(
-    <section className="hero">
+    <section className="hero mt-4">
       <div className="py-12">
         <h1 className="text-4xl font-semibold "><span className="text-primary leading-normal">Hambre?</span><br/> Tenemos <br/>la solucion!!</h1>
         <p className="my-4 text-gray-600">Pide lo que te apetezca, en unos minutos lo tendras contigo!</p>

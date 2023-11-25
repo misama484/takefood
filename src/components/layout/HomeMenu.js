@@ -1,4 +1,7 @@
 import Image from "next/image"
+import ItemCard from "./ItemCard"
+import SectionHeaders from "./SectionHeaders"
+
 
 export default function HomeMenu() {
   return (
@@ -12,24 +15,29 @@ export default function HomeMenu() {
         </div>
         
       </div>
-      <div className="text-center">
-        <h3 className="uppercase text-gray-500 font-semibold leading-4">Check out</h3>
-        <h2 className="text-primary font-bold text-4xl italic">Menu</h2>        
-      </div>
+      
+      <SectionHeaders subHeader={"Check out"} mainHeader={"Menu"}/>
 
       {/**Menu Items */}
       <div className="grid grid-cols-3 gap-4">
-        {/**Item */}
-        <div className="bg-gray-400 p-4 rounded-lg text-center">
-          <div className="flex justify-center">
-            <Image src={'/pizza.png'} alt='pizza' width={150} height={150} className="justify-center"/>
-          </div>
-          <h4 className="uppercase font-semibold my-2 text-xl">Pizza Veronessa</h4>
-          <p className="text-gray-500 text-sm">Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat.</p>
-          <p>Desde 15 Eur</p>
-          <button className="bg-primary text-white rounded-full px-6 py-2 mt-3 mr-3">Añadir</button>
-          <button className="bg-primary text-white rounded-full px-6 py-2 mt-3">Personaliza</button>
-        </div>
+        {/**Item Card*/}
+        
+          {Array.from({length: 5}).map((_, i) => (
+            <ItemCard 
+              key={i}
+              name={"Veronessa"} 
+              description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} 
+              price={"Desde 15 Eur"}
+            />
+          ))}
+          
+          <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
       </div>
     </section>
   )
