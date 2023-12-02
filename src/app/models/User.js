@@ -1,5 +1,6 @@
 import { Schema, models, model } from "mongoose";
 import next from "next";
+import bcrypt from 'bcrypt';
 
 const UserSchema = new Schema({
   email: {type: String, required: true, unique: true},
@@ -15,7 +16,10 @@ const UserSchema = new Schema({
 }, {timestamps: true});
 
 UserSchema.post('validate', function(user){
-  user.password = 'hash';
+  const notHashedPassword = user.password;
+  const salt = bcrypt.genSaltSync(10);
+  const hashedPassword = bcrypt.hashSync(notHashedPassword, salt);
+  user.password = hashedPassword;
 })
 
 //exportamos si existe el usuario y si no lo creamos

@@ -4,13 +4,18 @@
 
 section.hero{
   @apply block md:grid;
-  grid-template-columns: .4fr .6fr;
+  grid-template-columns: .encriptada pass4fr .6fr;
 }
 
 input[type="email"], input[type="password"], input[type="text"] {
   @apply block w-full my-4 rounded-xl;
   @apply border p-2 bg-gray-200 border-primary;
 }
+
+input[type="email"]:disabled, 
+input[type="password"]:disabled, 
+input[type="text"]:disabled {
+  @apply bg
 
 button{
   @apply block w-full text-gray-700 font-semibold;

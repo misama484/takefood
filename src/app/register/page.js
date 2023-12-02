@@ -7,14 +7,18 @@ function RegisterPage() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [creatingUser, setCreatingUser] = useState(false);
+  const [userCreated, setUserCreated] = useState(false);
 
-  function handleFormSumbit(ev){
+  async function handleFormSumbit(ev){
     ev.preventDefault();
-    fetch('/api/register', {
+    setCreatingUser(true);
+    await fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify({email, password}),
       headers:{'Content-Type':'application/json'},
     })
+    setCreatingUser(false);
   }
 
   return (
@@ -27,15 +31,17 @@ function RegisterPage() {
           type="email" 
           placeholder="email" 
           value={email} 
+          disabled={creatingUser}
           onChange={ev => setEmail(ev.target.value)}
         />
         <input 
           type="password" 
           placeholder="password"
           value={password}
+          disabled={creatingUser}
           onChange={ev => setPassword(ev.target.value)}  
         />
-        <button type="submit">Registro</button>
+        <button type="submit" disabled={creatingUser}>Registro</button>
         <div className="my-4 text-center text-gray-500">
           Registrar con</div>
         <button className="flex justify-center items-center gap-2 text-lg">
