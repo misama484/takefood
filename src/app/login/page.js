@@ -1,4 +1,4 @@
-
+import Image from "next/image"
 
 function LoginPage() {
   return (
@@ -9,10 +9,13 @@ function LoginPage() {
       <form className="block max-w-xs mx-auto">
         <input type="email" placeholder="email"/>
         <input type="password" placeholder="password"/>
-        <button type="submit">Registro</button>
+        <button type="submit">Login</button>
         <div className="my-4 text-center text-gray-500">
           Iniciar con</div>
-        <button>Google</button>
+          <button className="flex justify-center items-center gap-2 text-lg">
+          <Image src={'/googleLogo.png'} alt="googleLogo" width={35} height={35}/>
+          Google
+        </button>
         
       </form>
     </section>
