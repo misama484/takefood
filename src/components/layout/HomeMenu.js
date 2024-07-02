@@ -1,6 +1,7 @@
 import Image from "next/image"
 import ItemCard from "./ItemCard"
 import SectionHeaders from "./SectionHeaders"
+import PizzaOptions from "./PizzaOptions"
 
 
 export default function HomeMenu() {
@@ -22,7 +23,7 @@ export default function HomeMenu() {
       <div className="grid grid-cols-3 gap-4">
         {/**Item Card*/}
         
-          {Array.from({length: 5}).map((_, i) => (
+          {Array.from({length: 3}).map((_, i) => (
             <ItemCard 
               key={i}
               name={"Veronessa"} 
@@ -30,14 +31,9 @@ export default function HomeMenu() {
               price={"Desde 15 Eur"}
             />
           ))}
+          <PizzaOptions/>
           
-          <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
-        <ItemCard name={"Veronessa"} description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} price={"Desde 15 Eur"}/>
+          
       </div>
     </section>
   )
