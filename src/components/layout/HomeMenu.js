@@ -2,9 +2,13 @@ import Image from "next/image"
 import ItemCard from "./ItemCard"
 import SectionHeaders from "./SectionHeaders"
 import PizzaOptions from "./PizzaOptions"
+import pizzas from "../../pizzas.json"
 
 
 export default function HomeMenu() {
+  const arrayPizzas = pizzas;
+
+
   return (
     <section className="text-center">
       <div className="absolute left-0 right-0 w-full justify-start">
@@ -23,18 +27,12 @@ export default function HomeMenu() {
       <div className="grid grid-cols-3 gap-4">
         {/**Item Card*/}
         
-          {Array.from({length: 3}).map((_, i) => (
-            <ItemCard 
-              key={i}
-              name={"Veronessa"} 
-              description={"Eu consequat elit duis aliqua cillum reprehenderit occaecat pariatur cupidatat eiusmod aliqua irure fugiat."} 
-              price={"Desde 15 Eur"}
-            />
-          ))}
-          <PizzaOptions/>
-          
-          
+        {pizzas.pizzas.map((pizza, index) => {
+          return <ItemCard key={index} name={pizza.nombre} description={pizza.descripcion} price={pizza.precio}/>
+        })}
+                 
       </div>
+      <PizzaOptions/>
     </section>
   )
 }

@@ -1,0 +1,58 @@
+{
+  "pizzas": [
+    {
+      "nombre": "Margarita",
+      "ingredientes": ["salsa de tomate", "mozzarella", "albahaca"],
+      "descripcion": "Una clásica pizza italiana con salsa de tomate, mozzarella fresca y albahaca.",
+      "precio": 8.99
+    },
+    {
+      "nombre": "Pepperoni",
+      "ingredientes": ["salsa de tomate", "mozzarella", "pepperoni"],
+      "descripcion": "Cargada con rodajas de pepperoni sobre mozzarella y salsa de tomate.",
+      "precio": 9.99
+    },
+    {
+      "nombre": "Hawaiana",
+      "ingredientes": ["salsa de tomate", "mozzarella", "jamón", "piña"],
+      "descripcion": "Una dulce combinación de jamón y piña sobre mozzarella y salsa de tomate.",
+      "precio": 10.99
+    },
+    {
+      "nombre": "Cuatro Quesos",
+      "ingredientes": ["salsa de tomate", "mozzarella", "queso azul", "queso parmesano", "queso de cabra"],
+      "descripcion": "Una mezcla perfecta de cuatro quesos sobre una base de salsa de tomate.",
+      "precio": 11.99
+    },
+    {
+      "nombre": "Vegetariana",
+      "ingredientes": ["salsa de tomate", "mozzarella", "pimiento", "champiñones", "cebolla", "aceitunas", "albahaca"],
+      "descripcion": "Cargada de vegetales frescos sobre mozzarella y salsa de tomate.",
+      "precio": 9.99
+    },
+    {
+      "nombre": "Carnívora",
+      "ingredientes": ["salsa de tomate", "mozzarella", "pepperoni", "salchicha", "carne molida", "jamón"],
+      "descripcion": "Para los amantes de la carne, una pizza con pepperoni, salchicha, carne molida y jamón.",
+      "precio": 12.99
+    },
+    {
+      "nombre": "BBQ",
+      "ingredientes": ["salsa BBQ", "mozzarella", "pollo", "cebolla", "cilantro"],
+      "descripcion": "Pollo a la BBQ con mozzarella, cebolla y cilantro sobre una base de salsa BBQ.",
+      "precio": 10.99
+    },
+    {
+      "nombre": "Mexicana",
+      "ingredientes": ["salsa de tomate", "mozzarella", "jalapeños", "carne molida", "cebolla", "tomate", "aguacate"],
+      "descripcion": "Una pizza picante con jalapeños, carne molida, cebolla, tomate y aguacate sobre mozzarella y salsa de tomate.",
+      "precio": 11.99
+    },
+    {
+      "nombre": "Buffalo Chicken",
+      "ingredientes": ["salsa Buffalo", "pollo", "mozzarella", "apio", "queso azul"],
+      "descripcion": "Picante pizza de pollo con salsa Buffalo, apio y queso azul sobre mozzarella.",
+      "precio": 11.99
+    }
+  ]
+}
