@@ -28,7 +28,7 @@ export default function HomeMenu() {
         {/**Item Card*/}
         
         {pizzas.pizzas.map((pizza, index) => {
-          return <ItemCard key={index} name={pizza.nombre} description={pizza.descripcion} price={pizza.precio}/>
+          return <ItemCard key={index} pizza={pizza}/>
         })}
                  
       </div>

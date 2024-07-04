@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import {Button, Input, Box, FormControl, InputLabel, Select, MenuItem} from "@mui/material"
 import IngredientCard from './IngredientCard'
 
-const PizzaOptions = () => {
+const PizzaOptions = (pizza) => {
   const [masa, setMasa] = useState("");
   const [ingrediente, setIngrediente] = useState("");
   const [listaIngredientes, setListaIngredientes] = useState([]);
@@ -16,8 +16,10 @@ const PizzaOptions = () => {
     setListaIngredientes([...listaIngredientes, event.target.value])
   }
 
+  console.log(pizza)
+
   return (
-    <div className='border-2 w-[90vh] h-[90vh] rounded-lg my-4'>
+    <div className='border-2 w-[90vh] h-[90vh] rounded-lg my-4 bg-gray-400 '>
       <h1 className='text-2xl my-3'>Pizza Options</h1>
       <div className="flex justify-center items-center flex-col gap-6">
       <div className='grid-cols-2 flex flex-row gap-6 w-full border '>
@@ -54,28 +56,34 @@ const PizzaOptions = () => {
         </Box>      
       </div>
       <h1>Masa: {masa}</h1>
+      
       <div>
         <h1>Ingredientes:</h1>
+        
         <ul>
-          {listaIngredientes.map((ingrediente, index) => (
-            <li key={index}>{ingrediente}</li>
+          {listaIngredientes.map((P, index) => (
+            <li key={index}>{""}</li>
           ))}
         </ul>
       </div>
       <Button onClick={""}>Aceptar</Button>
     </div>
-      <div className='grid grid-cols-3 gap-4 mx-3'>
-        {Array.from({length:8 }).map((_, i) => (
-          <IngredientCard 
-            key={i}
-            name={"Mozarella"} 
-            description={"Anyade mozarella"} 
-            price={"5€"}
-          />
-        ))}
-      </div>
+      
     </div>
   )
 }
 
 export default PizzaOptions
+
+{/*
+  
+  <div className='grid grid-cols-3 gap-4 mx-3'>
+        {pizza.pizzas.map((p, i) => (
+         <IngredientCard 
+            key={i}
+            ingredientes={p.nombre}
+          /> 
+        ))}
+      </div>
+  
+  */}
