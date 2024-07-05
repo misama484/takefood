@@ -12,6 +12,7 @@ function ItemCard({pizza}) {
     setShowModal(true)
     setSelectedPizza(pizza)
   }
+  //console.log(selectedPizza)
   return (
     <div className="bg-gray-300 p-4 rounded-lg text-center hover:scale-105 hover:bg-gray-200 hover:shadow-xl hover:shadow-primary/25 transition-all flex flex-col justify-around ">
           <div className="flex justify-center">
@@ -30,7 +31,7 @@ function ItemCard({pizza}) {
             onClose={() => setShowModal(false)}
             className="flex justify-center items-center"
             >
-            <PizzaOptions pizza = {selectedPizza} />
+            <PizzaOptions nombre = {selectedPizza.nombre} descripcion = {selectedPizza.descripcion} ingredientes = {selectedPizza.ingredientes} />
           </Modal>
         )}
     </div>

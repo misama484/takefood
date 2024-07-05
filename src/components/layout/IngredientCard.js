@@ -1,11 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-const IngredientCard = ({ ingredientes }) => {
+const IngredientCard = ( {ingrediente} ) => {
   return (
-    <>
-      {ingredientes.map((ingrediente, index) => (
-        <div key={index} className="bg-gray-300 p-4 rounded-lg text-center hover:scale-105 hover:bg-gray-200 hover:shadow-xl hover:shadow-primary/25 transition-all">
+    
+        <div className="bg-gray-300 p-4 rounded-lg text-center hover:scale-105 hover:bg-gray-200 hover:shadow-xl hover:shadow-primary/25 transition-all">
           <div className="flex justify-center">
             <Image src={'/pizza.png'} alt='pizza' width={70} height={70} className="justify-center"/>
           </div>
@@ -16,9 +15,7 @@ const IngredientCard = ({ ingredientes }) => {
             <button className="bg-primary text-white rounded-full px-6 py-2 mt-3">-</button>
           </div>
         </div>
-      ))}
-    </>
-  )
-}
+
+)}
 
 export default IngredientCard;

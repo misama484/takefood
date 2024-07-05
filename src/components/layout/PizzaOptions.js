@@ -1,12 +1,13 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Button, Input, Box, FormControl, InputLabel, Select, MenuItem} from "@mui/material"
 import IngredientCard from './IngredientCard'
 
-const PizzaOptions = (pizza) => {
+const PizzaOptions = ({nombre, descripcion, ingredientes}) => {
   const [masa, setMasa] = useState("");
   const [ingrediente, setIngrediente] = useState("");
   const [listaIngredientes, setListaIngredientes] = useState([]);
+  const [selectedPizza, setSelectedPizza] = useState([])
 
   const handleMasa = (event) => {
     setMasa(event.target.value);
@@ -16,13 +17,18 @@ const PizzaOptions = (pizza) => {
     setListaIngredientes([...listaIngredientes, event.target.value])
   }
 
-  console.log(pizza)
+  useEffect(() => {
+    setListaIngredientes(ingredientes)    
+  },[])
+  
 
+  console.log(ingredientes)
+  //console.log(selectedPizza)
   return (
-    <div className='border-2 w-[90vh] h-[90vh] rounded-lg my-4 bg-gray-400 '>
-      <h1 className='text-2xl my-3'>Pizza Options</h1>
+    <div className='w-[90vh] h-[90vh] rounded-lg my-4 bg-gray-400 '>
+      <h1 className='text-2xl my-3 uppercase'>{nombre}</h1>
       <div className="flex justify-center items-center flex-col gap-6">
-      <div className='grid-cols-2 flex flex-row gap-6 w-full border '>
+      <div className='grid-cols-2 flex flex-row gap-6 w-full'>
         <Box sx={{ minWidth: 120, display: "flex", flexDirection:"row", gap: 10, width: "auto" }}>
           <FormControl fullWidth className='flex w-[1000px]'>
             <InputLabel id="demo-simple-select-label">Masa</InputLabel>
@@ -47,7 +53,7 @@ const PizzaOptions = (pizza) => {
               label="Ingredientes"
               onChange={handleIngrediente}
             >
-              <MenuItem value={"mozzarella"} onSelect={handleIngrediente}>Mozarella</MenuItem>
+              <MenuItem value={"mozzarella"} onSelect={handleIngrediente}>Mozzarella</MenuItem>
               <MenuItem value={"bacon"}>Bacon</MenuItem>
               <MenuItem value={"tomate"}>Tomate</MenuItem>
               <Button onClick={handleIngrediente}>Anyadir</Button>
@@ -59,17 +65,21 @@ const PizzaOptions = (pizza) => {
       
       <div>
         <h1>Ingredientes:</h1>
+        <p>{nombre}</p>
         
-        <ul>
-          {listaIngredientes.map((P, index) => (
-            <li key={index}>{""}</li>
+          {listaIngredientes.map((ingrediente, index) => (
+            <div key={index} className='flex flex-row gap-2'>
+              <IngredientCard 
+              ingrediente={ingrediente}
+              />
+          </div> 
           ))}
-        </ul>
+        </div>
       </div>
       <Button onClick={""}>Aceptar</Button>
     </div>
       
-    </div>
+    
   )
 }
 
@@ -79,11 +89,10 @@ export default PizzaOptions
   
   <div className='grid grid-cols-3 gap-4 mx-3'>
         {pizza.pizzas.map((p, i) => (
-         <IngredientCard 
-            key={i}
-            ingredientes={p.nombre}
-          /> 
+         
         ))}
       </div>
+
+      
   
   */}
