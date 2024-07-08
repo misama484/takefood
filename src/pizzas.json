@@ -54,5 +54,24 @@
       "descripcion": "Picante pizza de pollo con salsa Buffalo, apio y queso azul sobre mozzarella.",
       "precio": 11.99
     }
-  ]
+  ],
+    
+    "ingredientesUnicos": [
+      "salsa de tomate",
+      "mozzarella",
+      "jamón",
+      "piña",
+      "queso azul",
+      "queso parmesano",
+      "queso de cabra",
+      "pimiento",
+      "champiñones",
+      "cebolla",
+      "aceitunas",
+      "albahaca",
+      "pepperoni",
+      "salchicha",
+      "carne molida"
+    ]
+  
 }

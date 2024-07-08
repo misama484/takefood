@@ -1,8 +1,15 @@
+"use client"
 import Image from "next/image"
 import RightArrow from "../icons/RightArrow"
-
+import { Modal } from "@mui/material"
+import { useState } from "react";
+import PizzaOptions from "./PizzaOptions";
 
 export default function Hero() {
+  const [showModal, setShowModal] = useState(false)
+  const handleModal = () => {
+    setShowModal(true)
+  }
   return(
     <section className="hero mt-4">
       <div className="py-12">
@@ -14,11 +21,18 @@ export default function Hero() {
             Pedir Ahora
             <RightArrow/>
           </button>
-          <button className="flex gap-2 bg-transparent text-primary px-6 py-2 rounded-full font-semibold items-center">
-            Ver Menu
+          <button className="flex gap-2 bg-transparent text-primary px-6 py-2 rounded-full font-semibold items-center" onClick={handleModal}>
+            Crea tu pizza
             <RightArrow/>
           </button>
         </div>
+        <Modal 
+            open={showModal} 
+            onClose={() => setShowModal(false)}
+            className="flex justify-center items-center"
+            >
+            <PizzaOptions/>
+        </Modal>
 
       </div>
 
@@ -27,5 +41,7 @@ export default function Hero() {
       </div>
       
     </section>
+
+
   )
 }

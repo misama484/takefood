@@ -32,7 +32,7 @@ export default function HomeMenu() {
         })}
                  
       </div>
-      <PizzaOptions/>
+      
     </section>
   )
 }
