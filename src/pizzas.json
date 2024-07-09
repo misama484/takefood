@@ -57,31 +57,97 @@
   ],
     
     "ingredientesUnicos": [
-      "salsa de tomate",
-      "salsa buffalo",
-      "mozzarella",
-      "jamón",
-      "piña",
-      "queso azul",
-      "queso parmesano",
-      "queso de cabra",
-      "pimiento",
-      "champiñones",
-      "cebolla",
-      "aceitunas",
-      "albahaca",
-      "pepperoni",
-      "salchicha",
-      "carne molida"
+      {
+        "ingrediente": "salsa de tomate",
+        "precio": 0.50
+      },
+      {
+        "ingrediente": "salsa buffalo",
+        "precio": 0.75
+      },
+      {
+        "ingrediente": "mozzarella",
+        "precio": 1.00
+      },
+      {
+        "ingrediente": "jamón",
+        "precio": 1.50
+      },
+      {
+        "ingrediente": "piña",
+        "precio": 0.50
+      },
+      {
+        "ingrediente": "queso azul",
+        "precio": 1.25
+      },
+      {
+        "ingrediente": "queso parmesano",
+        "precio": 1.00
+      },
+      {
+        "ingrediente": "queso de cabra",
+        "precio": 1.75
+      },
+      {
+        "ingrediente": "pimiento",
+        "precio": 0.50
+      },
+      {
+        "ingrediente": "champiñones",
+        "precio": 0.75
+      },
+      {
+        "ingrediente": "cebolla",
+        "precio": 0.50
+      },
+      {
+        "ingrediente": "aceitunas",
+        "precio": 0.50
+      },
+      {
+        "ingrediente": "albahaca",
+        "precio": 0.25
+      },
+      {
+        "ingrediente": "pepperoni",
+        "precio": 1.50
+      },
+      {
+        "ingrediente": "salchicha",
+        "precio": 1.25
+      },
+      {
+        "ingrediente": "carne molida",
+        "precio": 1.75
+      }
     ],
 
     "ingredientesExtra": [
-      "Extra Salsa de tomate",
-      "Extra Salsa Barbacoa",
-      "Extra Sala Buffalo",
-      "Extra pollo",
-      "Extra Mozarrella",
-      "Extra Parmesano"
+      {
+        "ingrediente": "Extra Salsa de tomate",
+        "precio": 0.75
+      },
+      {
+        "ingrediente": "Extra Salsa Barbacoa",
+        "precio": 0.85
+      },
+      {
+        "ingrediente": "Extra Sala Buffalo",
+        "precio": 0.85
+      },
+      {
+        "ingrediente": "Extra pollo",
+        "precio": 1.50
+      },
+      {
+        "ingrediente": "Extra Mozarrella",
+        "precio": 1.25
+      },
+      {
+        "ingrediente": "Extra Parmesano",
+        "precio": 1.10
+      }
     ]
   
 }

@@ -7,7 +7,7 @@ import pizzas from "../../pizzas.json"
 const PizzaOptions = ({pizza, nombre, descripcion, ingredientes}) => {
   const [masa, setMasa] = useState("");
   const [ingrediente, setIngrediente] = useState("");
-  const [listaIngredientes, setListaIngredientes] = useState([]);
+  const [listaIngredientes, setListaIngredientes] = useState([{}]);
   const [selectedPizza, setSelectedPizza] = useState({})
   const [ingredientesPizza, setIngredientesPizza] = useState(ingredientes);
 
@@ -98,12 +98,13 @@ const PizzaOptions = ({pizza, nombre, descripcion, ingredientes}) => {
         {/* CAJA DE INGREDIENTES */}
         <p>Añadir ingrediente</p>
         <div className='grid grid-cols-3 gap-2 border'>
-         {listaIngredientes.map((ingrediente, index) => (
+         {listaIngredientes.map((i, index) => (
             <div key={index} className='flex flex-col gap-2'>
               <IngredientCard 
-              ingrediente={ingrediente}
-              agregarIngrediente = {() => agregarIngrediente(ingrediente)}
-              eliminarIngrediente = {() => eliminarIngrediente(ingrediente)}
+              ingrediente={i.ingrediente}
+              precio={i.precio}
+              agregarIngrediente = {() => agregarIngrediente(i.ingrediente)}
+              eliminarIngrediente = {() => eliminarIngrediente(i.ingrediente)}
               />
             </div> 
           ))}

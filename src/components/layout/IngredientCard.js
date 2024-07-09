@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const IngredientCard = ( {ingrediente, agregarIngrediente, eliminarIngrediente} ) => {
+const IngredientCard = ( {ingrediente, precio, agregarIngrediente, eliminarIngrediente} ) => {
   return (
     
         <div className="bg-gray-300 p-4 rounded-lg text-center hover:scale-105 hover:bg-gray-200 hover:shadow-xl hover:shadow-primary/25 transition-all">
@@ -9,7 +9,7 @@ const IngredientCard = ( {ingrediente, agregarIngrediente, eliminarIngrediente} 
             <Image src={'/pizza.png'} alt='pizza' width={70} height={70} className="justify-center"/>
           </div>
           <h4 className="uppercase my-2 text-lg">{ingrediente}</h4>
-          <p>{"2€"}</p>
+          <p>{precio}</p>
           <div className='flex flex-row'>
             <button className="bg-primary text-white rounded-full px-6 py-2 mt-3 mr-3" onClick={agregarIngrediente}>+</button>
             <button className="bg-primary text-white rounded-full px-6 py-2 mt-3" onClick={eliminarIngrediente}>-</button>

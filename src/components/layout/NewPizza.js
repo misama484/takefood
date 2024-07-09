@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {Button, Input, Box, FormControl, InputLabel, Select, MenuItem} from "@mui/material"
 import IngredientCard from './IngredientCard'
 import pizzas from "../../pizzas.json"
+import ExtraIngredient from "./ExtraIngredient"
 
 const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
   const [masa, setMasa] = useState("");
@@ -29,9 +30,10 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
     setTamaño(event.target.value)
   }
   const handleIngredienteExtra = (event) => {
-    /*let arrayExtras = [];
-    arrayExtras.push(extra)
-    setIngredientesExtra(arrayExtras)*/
+    if(listaExtras.includes(event.target.value)){
+      alert("Extra ya añadido")
+      return
+    }
     setListaExtras([...listaExtras, event.target.value])
   }
   //console.log(listaExtras)
@@ -57,7 +59,7 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
   //console.log(ingredientes)
   //console.log(nombre)
   return (
-    <div className='w-[70vh] h-auto p-6 rounded-lg my-4 bg-gray-400 '>
+    <div className='w-[80vh] h-auto p-6 rounded-lg my-4 bg-gray-400 '>
       <h1 className='text-2xl my-3 uppercase'>{nombre}</h1>
       <div className="flex justify-center items-center flex-col gap-6">
       <div className='flex flex-col gap-6 w-full'>
@@ -80,7 +82,7 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
           <FormControl fullWidth className='flex w-[100px]'>
             <InputLabel>Tamaño</InputLabel>
             <Select
-              value={""}
+              value={tamaño}
               label="Tamaño"
               onChange={handleTamaño}
             >
@@ -107,20 +109,19 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
           </FormControl>
         </Box>      
       </div>
-      <h1>Masa: {masa}</h1>
+      
       
       <div className=''>
-        <p>NEW PIZZA</p>
-        <p>Lista de ingredientes extra: </p>
+        <p className='font-bold text-xl flex justify-center m-6'>NEW PIZZA</p>
+        <p className='font-bold text-lg flex justify-center m-6'>Masa: {masa}</p>
+        <p className='font-bold text-lg flex justify-center m-6'>Lista de ingredientes extra:</p>
         {listaExtras.map((extra, index) => (
-          <div key={index} className='flex flex-row items-center justify-around w-[35vh]'>
-            <div className='text-xl'>{extra}</div>
-            <button className="bg-primary text-white rounded-full w-20 px-1 py-2 mt-3" onClick={eliminaIngredienteExtra(extra)}>-</button>
-           </div>
+          <ExtraIngredient key = {index} extra = {extra} eliminaIngredienteExtra={() => eliminaIngredienteExtra(extra)}/>
         ))}
-        <h1>Ingredientes:</h1>
+
+        <h1 className='font-bold text-lg flex justify-center m-6'>Ingredientes:</h1>
         {/* INGREDIENTES NEWPIZZA */}
-        <div className='grid grid-cols-3 border '>
+        <div className='grid grid-cols-3 gap-2'>
           {ingredientesNewPizza.map((ingrediente, index) => (
             <div key={index} className='flex flex-col gap-2'>
              <IngredientCard 
@@ -132,8 +133,8 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
           ))}
         </div>
         {/* CAJA DE INGREDIENTES */}
-        <p>Añadir ingrediente</p>
-        <div className='grid grid-cols-3 gap-2 border'>
+        <p className='font-bold text-lg flex justify-center m-6'>Añadir ingrediente:</p>
+        <div className='grid grid-cols-3 gap-2'>
          {listaIngredientes.map((ingrediente, index) => (
             <div key={index} className='flex flex-col gap-2'>
               <IngredientCard 
