@@ -3,7 +3,7 @@ import Image from "next/image"
 import RightArrow from "../icons/RightArrow"
 import { Modal } from "@mui/material"
 import { useState } from "react";
-import PizzaOptions from "./PizzaOptions";
+import NewPizza from "./NewPizza";
 
 export default function Hero() {
   const [showModal, setShowModal] = useState(false)
@@ -26,12 +26,15 @@ export default function Hero() {
             <RightArrow/>
           </button>
         </div>
+        
         <Modal 
             open={showModal} 
             onClose={() => setShowModal(false)}
-            className="flex justify-center items-center"
+            className="flex justify-center overflow-y-auto"
             >
-            <PizzaOptions/>
+            <div className="max-h-[calc(100vh -4rem)] overflow-y-auto">
+              <NewPizza/>
+            </div>
         </Modal>
 
       </div>

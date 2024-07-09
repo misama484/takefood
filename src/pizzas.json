@@ -58,6 +58,7 @@
     
     "ingredientesUnicos": [
       "salsa de tomate",
+      "salsa buffalo",
       "mozzarella",
       "jamón",
       "piña",
@@ -72,6 +73,15 @@
       "pepperoni",
       "salchicha",
       "carne molida"
+    ],
+
+    "ingredientesExtra": [
+      "Extra Salsa de tomate",
+      "Extra Salsa Barbacoa",
+      "Extra Sala Buffalo",
+      "Extra pollo",
+      "Extra Mozarrella",
+      "Extra Parmesano"
     ]
   
 }
