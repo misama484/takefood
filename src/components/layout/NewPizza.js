@@ -55,6 +55,36 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
     let newIngredientes = ingredientesNewPizza.filter((ing) => ing !== ingrediente)
     setIngredientesNewPizza(newIngredientes)
   }
+  //suma los precios de cada ingrediente y extra de la pizza.
+  const precioPizza = () => {
+      let precio = 0
+      ingredientesNewPizza.map((ingrediente) => {
+        let ingPvp = 
+        precio = precio + ingrediente.precio
+      })
+      listaExtras.map((extra) => {
+        precio = precio + extra.precio
+      })
+      return precio
+    }
+  
+    //creamos un objeto pizza con la pizza creada y su precio
+  const crearPizza = () => {
+    
+    let pvp = precioPizza();
+    let pizza = {
+      nombre: nombre,
+      masa: masa,
+      tamaño: tamaño,
+      ingredientes: ingredientesNewPizza,
+      extras: listaExtras,
+      precio: pvp // todo DEVUELVE NaN
+    }
+    console.log(pizza)
+  }
+
+  
+
 
   //console.log(ingredientes)
   //console.log(nombre)
@@ -102,7 +132,7 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
               onChange={handleIngredienteExtra}
             >
               {ingredientesExtra.map((ingrediente, index) => {
-                return <MenuItem key={index} value={ingrediente} onClick={handleIngredienteExtra}>{ingrediente}</MenuItem>
+                return <MenuItem key={index} value={ingrediente.ingrediente + ingrediente.precio} onClick={handleIngredienteExtra}>{ingrediente.ingrediente + "--" + ingrediente.precio}</MenuItem>
               })}
               <Button onClick={handleIngrediente}>Anyadir</Button>
             </Select>          
@@ -125,7 +155,8 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
           {ingredientesNewPizza.map((ingrediente, index) => (
             <div key={index} className='flex flex-col gap-2'>
              <IngredientCard 
-              ingrediente={ingrediente}
+              ingrediente={ingrediente.ingrediente}
+              precio={ingrediente.precio}
               agregarIngrediente = {() => agregarIngrediente(ingrediente)}
               eliminarIngrediente = {() => eliminarIngrediente(ingrediente)}
              />
@@ -138,7 +169,8 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
          {listaIngredientes.map((ingrediente, index) => (
             <div key={index} className='flex flex-col gap-2'>
               <IngredientCard 
-              ingrediente={ingrediente}
+              ingrediente={ingrediente.ingrediente}
+              precio={ingrediente.precio}
               agregarIngrediente = {() => agregarIngrediente(ingrediente)}
               eliminarIngrediente = {() => eliminarIngrediente(ingrediente)}
               />
@@ -147,7 +179,7 @@ const NewPizza = ({pizza, nombre, descripcion, ingredientes}) => {
         </div>
         </div>
       </div>
-      <Button onClick={""}>Aceptar</Button>
+      <Button onClick={crearPizza}>Aceptar</Button>
     </div>
       
     
